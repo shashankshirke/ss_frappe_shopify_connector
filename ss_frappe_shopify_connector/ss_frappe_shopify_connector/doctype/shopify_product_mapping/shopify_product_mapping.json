@@ -1,0 +1,124 @@
+{
+ "doctype": "DocType",
+ "name": "Shopify Product Mapping",
+ "module": "SS Frappe Shopify Connector",
+ "autoname": "format:{shopify_store}-{shopify_variant_id}",
+ "engine": "InnoDB",
+ "custom": 0,
+ "istable": 0,
+ "issingle": 0,
+ "track_changes": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "fields": [
+  {
+   "fieldname": "shopify_store",
+   "fieldtype": "Link",
+   "label": "Shopify Store",
+   "options": "Shopify Settings",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "shopify_product_name",
+   "fieldtype": "Data",
+   "label": "Shopify Product Name",
+   "reqd": 1,
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "shopify_variant_title",
+   "fieldtype": "Data",
+   "label": "Shopify Variant Title",
+   "read_only": 1,
+   "description": "e.g. Size / Color, blank if the product has a single default variant"
+  },
+  {
+   "fieldname": "column_break_ids",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shopify_product_id",
+   "fieldtype": "Data",
+   "label": "Shopify Product ID",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "shopify_variant_id",
+   "fieldtype": "Data",
+   "label": "Shopify Variant ID",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "shopify_sku",
+   "fieldtype": "Data",
+   "label": "Shopify SKU",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_mapping",
+   "fieldtype": "Section Break",
+   "label": "ERPNext Mapping"
+  },
+  {
+   "fieldname": "erpnext_item_code",
+   "fieldtype": "Link",
+   "label": "ERPNext Item Code",
+   "options": "Item",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "column_break_item",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "erpnext_item_name",
+   "fieldtype": "Data",
+   "label": "ERPNext Item Name",
+   "fetch_from": "erpnext_item_code.item_name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_status",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "mapping_status",
+   "fieldtype": "Select",
+   "label": "Mapping Status",
+   "options": "Unmapped\nAuto-Matched (Review)\nMapped",
+   "default": "Unmapped",
+   "read_only": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "column_break_status",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_synced_on",
+   "fieldtype": "Datetime",
+   "label": "Last Synced On",
+   "read_only": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  }
+ ]
+}
